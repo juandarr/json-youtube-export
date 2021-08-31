@@ -5,95 +5,130 @@
     <meta name="viewport" content="width=device-width" />
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="main.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <title>NewPipe subscription tool</title>
   </head>
 
   <body>
-  <main id="main">
-    <div>
-      <header>
-        <h1><a href="https://newpipe.net/">NewPipe</a> subscription tool</h1>
-      </header>
+    <main id="main">
+      <div>
+        <header>
+          <h1><a href="https://newpipe.net/">NewPipe</a> subscription tool</h1>
+        </header>
+        <p>
+          This tool allows you to convert the current CSV format used by
+          <a href="https://takeout.google.com/settings/takeout"
+            >Google takeout</a
+          >
+          (as of 2021/08/31) to export your YouTube subscriptions.
+          Alternatively, you can use
+          <a
+            href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
+            >this Chrome extension</a
+          >
+          to get subscription information from YouTube and the converter tool
+          provided below (step <strong>2.alt</strong>).
+        </p>
+        <p>
+          It performs a conversion to JSON in a valid format compatible with
+          NewPipe. Here is what you need to do:
+        </p>
+      </div>
+      <h2>1. NewPipe export</h2>
       <p>
-        This tool allows you to convert the current CSV format used by <a href="https://takeout.google.com/settings/takeout">Google
-        takeout</a> (as of 2021/08/31) to export your YouTube subscriptions. Alternatively, you can use <a
-        href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en">this Chrome extension</a> to get 
-        subscription information from YouTube and the converter tool provided below (step <strong>2.alt</strong>).
+        It's
+        <a href="https://github.com/JCGdev/Newpipe-CSV-Fixer">recommended</a> to
+        export an empty subscription file from NewPipe and check whether the
+        values defined below match the ones of your NewPipe version. The image
+        below shows the location of the export feature in NewPipe (<code
+          >Export to -> File</code
+        >):
       </p>
+      <img style="width: 200px" src="./resources/export-newpipe.png" />
       <p>
-        It performs a conversion to JSON in a valid format compatible with
-        NewPipe. Here is what you need to do:
+        If you made a NewPipe export, paste the contents of the file into this
+        input. The information in the box below is provided by default, make
+        sure you are using the correct values of <code>app_version</code> and
+        <code>app_version_int</code> for your specific NewPipe version.
       </p>
-    </div>
-    <h2>1. NewPipe export</h2>
-    <p>
-      It's
-      <a href="https://github.com/JCGdev/Newpipe-CSV-Fixer">recommended</a> to
-      export an empty subscription file from NewPipe and check whether the
-      values defined below match the ones of your NewPipe version. The image below shows the location of the export feature in NewPipe (<code>Export to -> File</code>):
-    </p>
-    <img style="width:200px;" src="./resources/export-newpipe.png">
-    <p>
-      If you made a NewPipe export, paste the contents of the file into this
-      input. The information in the box below is provided by default, make sure you are using the correct values of <code>app_version</code> and <code>app_version_int</code> for your specific NewPipe version.
-    </p>
-    <textarea id="newpipe-export" rows="12" cols="80">
+      <textarea id="newpipe-export" rows="12" cols="80">
 {
   "app_version": "0.21.9",
   "app_version_int": 975,
   "subscriptions": []
 }
 </textarea
-    >
-    <h2>
-      2. YouTube export from
-      <a href="https://takeout.google.com/settings/takeout">Google takeout</a>
-      <br>or 2.alt YouTube export from
-      <a
-        href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
-        >Chrome extension</a
-      ><div style="font-size:14px;">(faster and less troublesome)</div>
-    </h2>
-    <p>Paste your Youtube export into this input.</p>
-    <p>
-      <strong>2)</strong> In case of getting the export subscription data from <a href="https://takeout.google.com/settings/takeout">Google takeout</a>, copy
-      the contents of your CSV file and proceed to click on the "Convert from CSV" button.
-    </p>
-    <p>
-      <strong>2.alt)</strong> In case you are having problems with Google handout, you can alternatively
-      get the YouTube subscription data using a Chrome extension called
-      <a
-        href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
-        >YouTube subscriptions exporter</a
-      >. After getting the data, paste it in the input below and proceed to click
-      on the "Convert from extension data" button.
-    </p>
-    <textarea id="youtube-export" rows="12" cols="80"></textarea>
-    <div class="button-section">
-      <button type="button" id="from-csv"><strong>2)</strong> Convert from CSV</button>
-      <button type="button" id="from-name-url">
-        <strong>2.alt)</strong> Convert from extension data
-      </button>
-    </div>
-
-    <h2>3. NewPipe import</h2>
-    <p>The conversion result should appear in the input below.</p>
-      <textarea id="newpipe-import" rows="12" cols="80"></textarea>
-    </p>
-     <p>
-      You can store the data in a text file with <code>.json</code> extension. Then import in
-      NewPipe. <strong>Advice</strong>: make sure to import the <code>.json</code> file in the correct section (<code>Import from -> Previous export</code>), otherwise it won't work. Check the image below to see the correct location of the import feature in NewPipe: 
-      </p>
-      <img style="width:200px;" src="./resources/import-newpipe.png">
+      >
+      <h2>
+        2. YouTube export from
+        <a href="https://takeout.google.com/settings/takeout">Google takeout</a>
+        <br />or 2.alt YouTube export from
+        <a
+          href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
+          >Chrome extension</a
+        >
+        <div style="font-size: 14px">(faster and less troublesome)</div>
+      </h2>
+      <p>Paste your Youtube export into this input.</p>
       <p>
-      Hope it works, have fun!
-    </p>
-    <h2> Credits</h2>
-    <p>Special thanks to <a href="https://www.reddit.com/r/NewPipe/comments/oprw6d/google_takeouts_exporting_in_csv_format/h7qlevp/?context=3">nikcorg</a> whose <a href="https://jsbin.com/pegiloviza">work</a> I used as the foundation of this mini project. I also learned a ton about the correct export/import process and JSON format from <a href="https://github.com/JCGdev/Newpipe-CSV-Fixer">JCGdev
-</a>Github repository.</p> 
-<p>Everything here is free and open source, feel free to <a href="https://github.com/juandarr/json-youtube-export">play with the code</a>.</p>   
- </main>
+        <strong>2)</strong> In case of getting the export subscription data from
+        <a href="https://takeout.google.com/settings/takeout">Google takeout</a
+        >, copy the contents of your CSV file and proceed to click on the
+        "Convert from CSV" button.
+      </p>
+      <p>
+        <strong>2.alt)</strong> In case you are having problems with Google
+        handout, you can alternatively get the YouTube subscription data using a
+        Chrome extension called
+        <a
+          href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
+          >YouTube subscriptions exporter</a
+        >. After getting the data, paste it in the input below and proceed to
+        click on the "Convert from extension data" button.
+      </p>
+      <textarea id="youtube-export" rows="12" cols="80"></textarea>
+      <div class="button-section">
+        <button type="button" id="from-csv">
+          <strong>2)</strong> Convert from CSV
+        </button>
+        <button type="button" id="from-name-url">
+          <strong>2.alt)</strong> Convert from extension data
+        </button>
+      </div>
+
+      <h2>3. NewPipe import</h2>
+      <p>The conversion result should appear in the input below.</p>
+      <textarea id="newpipe-import" rows="12" cols="80"></textarea>
+
+      <p>
+        You can store the data in a text file with <code>.json</code> extension.
+        Then import in NewPipe. <strong>Advice</strong>: make sure to import the
+        <code>.json</code> file in the correct section (<code
+          >Import from -> Previous export</code
+        >), otherwise it won't work. Check the image below to see the correct
+        location of the import feature in NewPipe:
+      </p>
+      <img style="width: 200px" src="./resources/import-newpipe.png" />
+      <p>Hope it works, have fun!</p>
+      <h2>Credits</h2>
+      <p>
+        Special thanks to
+        <a
+          href="https://www.reddit.com/r/NewPipe/comments/oprw6d/google_takeouts_exporting_in_csv_format/h7qlevp/?context=3"
+          >nikcorg</a
+        >
+        whose <a href="https://jsbin.com/pegiloviza">work</a> I used as the
+        foundation of this mini project. I also learned a ton about the correct
+        export/import process and JSON format from
+        <a href="https://github.com/JCGdev/Newpipe-CSV-Fixer">JCGdev </a>Github
+        repository.
+      </p>
+      <p>
+        Everything here is free and open source, feel free to
+        <a href="https://github.com/juandarr/json-youtube-export"
+          >play with the code</a
+        >.
+      </p>
+    </main>
   </body>
 </html>
-
