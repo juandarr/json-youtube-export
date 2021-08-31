@@ -16,8 +16,10 @@
         <h1><a href="https://newpipe.net/">NewPipe</a> subscription tool</h1>
       </header>
       <p>
-        This tool allows you to convert the current CSV format used by Google
-        takeout (as of 2021/08/31) to export your YouTube subscriptions.
+        This tool allows you to convert the current CSV format used by <a href="https://takeout.google.com/settings/takeout">Google
+        takeout</a> (as of 2021/08/31) to export your YouTube subscriptions. Alternatively, you can use <a
+        href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en">this Chrome extension</a> to get 
+        subscription information from YouTube and the converter tool provided below (step <strong>2.alt</strong>).
       </p>
       <p>
         It performs a conversion to JSON in a valid format compatible with
@@ -33,7 +35,7 @@
     </p>
     <p>
       If you made a NewPipe export, paste the contents of the file into this
-      input. Otherwise, it's probably fine to use this default.
+      input. The information in the box below is provided by default, make sure you are using the correct values for your specific NewPipe version.
     </p>
     <textarea id="newpipe-export" rows="12" cols="80">
 {
@@ -54,11 +56,11 @@
     </h2>
     <p>Paste your Youtube export into this input.</p>
     <p>
-      In case of getting the export subscription data from Google takeout, copy
+      <strong>2)</strong> In case of getting the export subscription data from <a href="https://takeout.google.com/settings/takeout">Google takeout</a>, copy
       the contents of your CSV file and proceed to click on "Convert from CSV".
     </p>
     <p>
-      In case you are having problems with Google handout, you can alternatively
+      <strong>2.alt)</strong> In case you are having problems with Google handout, you can alternatively
       get the YouTube subscription data using a Chrome extension called
       <a
         href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
@@ -74,9 +76,9 @@
     </p>
 
     <p>
-      <button type="button" id="from-csv">Convert from CSV</button>
+      <button type="button" id="from-csv"><strong>2)</strong> Convert from CSV</button>
       <button type="button" id="from-name-url">
-        Convert from extension data
+        <strong>2.alt)</strong> Convert from extension data
       </button>
     </p>
 
@@ -91,3 +93,4 @@
     </main>
   </body>
 </html>
+
