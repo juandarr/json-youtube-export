@@ -8,3 +8,23 @@
 code {
     color: rgb(8, 125, 86);
 }
+
+a {
+    color: dodgerblue;
+}
+
+a:hover {
+    color: salmon;
+}
+
+.button-section {
+    padding-top: 15px;
+}
+
+button {
+    border: 2px solid;
+    padding: 10px;
+    font-size: 16px;
+    background-color: salmon;
+    cursor: pointer;
+}

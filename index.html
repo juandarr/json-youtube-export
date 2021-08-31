@@ -58,7 +58,7 @@
     <p>Paste your Youtube export into this input.</p>
     <p>
       <strong>2)</strong> In case of getting the export subscription data from <a href="https://takeout.google.com/settings/takeout">Google takeout</a>, copy
-      the contents of your CSV file and proceed to click on "Convert from CSV".
+      the contents of your CSV file and proceed to click on the "Convert from CSV" button.
     </p>
     <p>
       <strong>2.alt)</strong> In case you are having problems with Google handout, you can alternatively
@@ -67,21 +67,15 @@
         href="https://chrome.google.com/webstore/detail/youtube-subscriptions-exp/dhpojdmnffaocepmljcdcongdmkjblan?hl=en"
         >YouTube subscriptions exporter</a
       >. After getting the data, paste it in the input below and proceed to click
-      on "Convert from extension data".
+      on the "Convert from extension data" button.
     </p>
     <textarea id="youtube-export" rows="12" cols="80"></textarea>
-
-    <p>
-      If you pasted the CSV export, click on the "Convert from CSV" button. If you
-      scraped the subscription information with the Chrome extension, click on the "Convert from extension data" button.
-    </p>
-
-    <p>
+    <div class="button-section">
       <button type="button" id="from-csv"><strong>2)</strong> Convert from CSV</button>
       <button type="button" id="from-name-url">
         <strong>2.alt)</strong> Convert from extension data
       </button>
-    </p>
+    </div>
 
     <h2>3. NewPipe import</h2>
     <p>The conversion result should appear in the input below.</p>
@@ -95,7 +89,11 @@
       <p>
       Hope it works, have fun!
     </p>
-    </main>
+    <h2> Credits</h2>
+    <p>Special thanks to <a href="https://www.reddit.com/r/NewPipe/comments/oprw6d/google_takeouts_exporting_in_csv_format/h7qlevp/?context=3">nikcorg</a> whose <a href="https://jsbin.com/pegiloviza">work</a> I used as the foundation of this mini project. I also learned a ton about the correct export/import process and JSON format from <a href="https://github.com/JCGdev/Newpipe-CSV-Fixer">JCGdev
+</a>Github repository.</p> 
+<p>Everything here is free and open source, feel free to <a href="https://github.com/juandarr/json-youtube-export">play with the code</a>.</p>   
+ </main>
   </body>
 </html>
 
