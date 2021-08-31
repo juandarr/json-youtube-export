@@ -3,18 +3,7 @@ $(document).ready(function() {
     const yte = document.getElementById("youtube-export");
     const npi = document.getElementById("newpipe-import");
     const btnCsv = document.getElementById("from-csv");
-    const btnJson = document.getElementById("from-json");
     const btnRow = document.getElementById("from-name-url");
-
-    function fromJSON(e) {
-        e.preventDefault();
-
-        const subs = JSON.parse(yte.value);
-        const tmpl = JSON.parse(npe.value);
-
-        tmpl.subscriptions = subs;
-        npi.value = JSON.stringify(tmpl, null, 2);
-    }
 
     function fromCSV(e) {
         e.preventDefault();
@@ -60,7 +49,6 @@ $(document).ready(function() {
     }
 
     btnCsv.addEventListener("click", fromCSV);
-    btnJson.addEventListener("click", fromJSON);
     btnRow.addEventListener("click", fromNameUrl);
 
     console.log("Event listeners are ready!");
