@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="main.js"></script>
     <title>JS Bin</title>
-</head>
+  </head>
 
-<body>
-    <h2>NewPipe export</h2>
-    <p>If you made a NewPipe export, paste the contents of the file into this input. Otherwise, it's probably fine to
-        use this default.</p>
+  <body>
+    <h2>1. NewPipe export</h2>
+    <p>
+      If you made a NewPipe export, paste the contents of the file into this
+      input. Otherwise, it's probably fine to use this default.
+    </p>
     <textarea id="newpipe-export" rows="12" cols="80">
 {
-  "app_version": "0.21.8",
-  "app_version_int": 974,
+  "app_version": "0.21.9",
+  "app_version_int": 975,
   "subscriptions": []
 }
-</textarea>
+</textarea
+    >
 
-    <h2>Youtube export</h2>
+    <h2>
+      2. YouTube export from Google takeout or 2.alt YouTube export from Chrome
+      extension
+    </h2>
     <p>Paste your Youtube export into this input.</p>
     <textarea id="youtube-export" rows="12" cols="80"></textarea>
 
-    <p>If you pasted the CSV export, click the "Convert from CSV" button. If you converted the CSV file into JSON, click
-        the "Convert from JSON" button.
     <p>
+      If you pasted the CSV export, click the "Convert from CSV" button. If you
+      converted the CSV file into JSON, click the "Convert from JSON" button.
+    </p>
 
-        <button type="button" id="from-csv">Convert from CSV</button>
-        <button type="button" id="from-json">Convert from JSON</button>
+    <p>
+      <button type="button" id="from-csv">Convert from CSV</button>
+      <button type="button" id="from-json">Convert from JSON</button>
+      <button type="button" id="from-name-url">Convert from -name url-</button>
+    </p>
 
     <h2>NewPipe import</h2>
-    <p>The conversion result should appear in the input below. If it doesn't something didn't work. Sorry, but there's
-        no guarantees.</p>
+    <p>
+      The conversion result should appear in the input below. If it doesn't
+      something didn't work. Sorry, but there's no guarantees.
+    </p>
     <textarea id="newpipe-import" rows="12" cols="80"></textarea>
-    <p>Copy the text from above and save it into a file with a <code>.json</code> extension. Import it into NewPipe.</p>
-</body>
-
+    <p>
+      Copy the text from above and save it into a file with a
+      <code>.json</code> extension. Import it into NewPipe.
+    </p>
+  </body>
 </html>
