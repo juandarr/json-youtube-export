@@ -35,9 +35,8 @@ $(document).ready(function() {
             .map((line) => line.trim())
             .filter((line) => line.length > 0)
             .map((line) => line.split(/(http)/))
-            .map((item, index) => item.concat(index))
-            .map(([name, prefix, url, id]) => ({
-                service_id: id,
+            .map(([name, prefix, url]) => ({
+                service_id: 0,
                 url: (prefix + url).replace("http:", "https:"),
                 name: name.trim(),
             }));
