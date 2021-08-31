@@ -28,3 +28,10 @@ button {
     background-color: salmon;
     cursor: pointer;
 }
+
+#newpipe-import,
+#youtube-export,
+#newpipe-export {
+    width: 100%;
+    min-height: 200px;
+}
