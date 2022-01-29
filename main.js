@@ -38,7 +38,7 @@ $(document).ready(function() {
             .map(([name, prefix, url]) => ({
                 service_id: 0,
                 url: (prefix + url).replace("http:", "https:"),
-                name: url.split('/').pop(),
+                name: url.split('/').reverse()[0],
                 //name: name.trim(),
             }));
 
