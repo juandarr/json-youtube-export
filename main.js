@@ -38,7 +38,8 @@ $(document).ready(function() {
             .map(([name, prefix, url]) => ({
                 service_id: 0,
                 url: (prefix + url).replace("http:", "https:"),
-                name: name.trim(),
+                name: url.split('/').pop(),
+                //name: name.trim(),
             }));
 
         const tmpl = JSON.parse(npe.value);
